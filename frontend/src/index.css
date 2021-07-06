@@ -1,0 +1,9 @@
+main {
+  min-height: 80vh;
+}
+
+#nav-links {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
