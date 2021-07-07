@@ -77,6 +77,33 @@ const products = [
     rating: 4,
     numReviews: 12,
   },
+  {
+    _id: "7",
+    name: "Apple Watch SE",
+    image: "/images/watch.jpg",
+    description:
+      "Apple Watch SE has the same larger display size Retina display as Series 6, so you can see more at a glance. Advanced sensors to track all your fitness and workout goals. And powerful features to keep you healthy and safe. The Sleep app lets you set a bedtime routine and track your sleep. And you also get calls, messages, and music right on your wrist. It’s a lot of watch for a lot less than you expected.",
+    brand: "Apple",
+    category: "Electronics",
+    price: 419.99,
+    countInStock: 4,
+    rating: 4.3,
+    numReviews: 3,
+  },
+  {
+    _id: "8",
+    name: "Keychron K1",
+    image: "/images/keychron-K1.jpg",
+    description:
+      "Keychron is here to make typing easier and better. The Keychron keyboard offers several different key quantities, an 87 and 104 key layout and improved layout on new version, to best meet your needs. Compatible with both iOS, macOS and Windows Android, simply switch between the operating systems with the toggle on the side",
+    brand: "Keychron",
+    category: "Electronics",
+    price: 74.0,
+    countInStock: 7,
+    rating: 4.8,
+    numReviews: 9,
+  },
 ];
+
 
 export default products;
