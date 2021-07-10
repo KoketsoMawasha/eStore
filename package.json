@@ -1,0 +1,14 @@
+{
+  "name": "estore",
+  "version": "1.0.0",
+  "description": "MERN ecommerce site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "author": "Koketso Mawasha",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

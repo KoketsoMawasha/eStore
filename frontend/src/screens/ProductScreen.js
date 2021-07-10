@@ -9,7 +9,7 @@ const ProductScreen = ({ match }) => {
   return (
     <>
       <Link to="/" className="btn my-3">
-        Back
+        Previous
       </Link>
       <Row>
         <Col md={5} className="mb-3">
