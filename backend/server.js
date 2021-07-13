@@ -16,4 +16,4 @@ app.get("/api/products/:id", (req, res) => {
   res.json(product);
 });
 
-app.listen(5000, console.log("server running now"));
+app.listen(5000, console.log("Server initiated..."));
