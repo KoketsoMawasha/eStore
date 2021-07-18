@@ -12,7 +12,7 @@ import {
   Card,
 } from "react-bootstrap";
 import Message from "../components/Message";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 
 const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id;
@@ -22,7 +22,6 @@ const CartScreen = ({ match, location, history }) => {
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
-
   const { cartItems } = cart;
 
   useEffect(() => {
@@ -31,7 +30,9 @@ const CartScreen = ({ match, location, history }) => {
     }
   }, [dispatch, productId, qty]);
 
-  const removeFromCarthandler = (id) => {};
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id));
+  };
 
   const checkoutHandler = () => {
     history.push("/login?redirect=shipping");
@@ -39,9 +40,9 @@ const CartScreen = ({ match, location, history }) => {
 
   return (
     <div>
-      <Row>
+      <h1>Shopping Cart</h1>
+      <Row className="align-items-start">
         <Col md={8}>
-          <h1>Shopping Cart</h1>
           {cartItems.length === 0 ? (
             <Message>
               Your shopping cart is empty. Lets pick some items up shall we?
@@ -49,7 +50,7 @@ const CartScreen = ({ match, location, history }) => {
               <Link to="/">Shop</Link>
             </Message>
           ) : (
-            <ListGroup varient="flush">
+            <ListGroup>
               {cartItems.map((item) => (
                 <ListGroup.Item key={item.product}>
                   <Row>
@@ -66,7 +67,9 @@ const CartScreen = ({ match, location, history }) => {
                         as="select"
                         value={item.qty}
                         onChange={(e) =>
-                          dispatch(addToCart(item.id, Number(e.target.value)))
+                          dispatch(
+                            addToCart(item.product, Number(e.target.value))
+                          )
                         }
                       >
                         {[...Array(item.countInStock).keys()].map((x) => (
@@ -81,7 +84,8 @@ const CartScreen = ({ match, location, history }) => {
                       <Button
                         type="button"
                         varient="dark"
-                        onClick={removeFromCarthandler(item.product)}
+                        className="btn-danger"
+                        onClick={() => removeFromCartHandler(item.product)}
                       >
                         <i className="fas fa-trash"></i>
                       </Button>
@@ -110,7 +114,7 @@ const CartScreen = ({ match, location, history }) => {
               <ListGroup.Item>
                 <Button
                   type="button"
-                  className="btn-block"
+                  className="btn-block btn-success"
                   disabled={cartItems.length === 0}
                   onClick={checkoutHandler}
                 >
