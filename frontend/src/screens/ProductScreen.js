@@ -59,7 +59,7 @@ const ProductScreen = ({ history, match }) => {
               </ListGroup.Item>
 
               {/* <ListGroup.Item>
-              <p>Price: ${product.price}</p>
+              <p>Price: ${product.Price}</p>
             </ListGroup.Item> */}
               <ListGroup.Item>
                 <h3>Description</h3>
@@ -75,7 +75,7 @@ const ProductScreen = ({ history, match }) => {
                   <Row>
                     <Col>Price</Col>
                     <Col>
-                      <strong>${product.price}</strong>
+                      <strong>${product.Price}</strong>
                     </Col>
                   </Row>
                 </ListGroup.Item>

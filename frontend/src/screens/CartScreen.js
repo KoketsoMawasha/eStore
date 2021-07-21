@@ -38,6 +38,11 @@ const CartScreen = ({ match, location, history }) => {
     history.push("/login?redirect=shipping");
   };
 
+  const priceFormat = new Intl.NumberFormat("en-us", {
+    style: "currency",
+    currency: "USD",
+  });
+
   return (
     <div>
       <h1>Shopping Cart</h1>
@@ -105,10 +110,11 @@ const CartScreen = ({ match, location, history }) => {
                   Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}
                   ){" "}
                 </h2>
-                $
-                {cartItems
-                  .reduce((acc, item) => acc + item.price, 0)
-                  .toFixed(2)}
+                {priceFormat.format(
+                  cartItems
+                    .reduce((acc, item) => acc + item.price, 0)
+                    .toFixed(2)
+                )}
               </ListGroup.Item>
 
               <ListGroup.Item>
