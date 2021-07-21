@@ -4,6 +4,9 @@ import { authUser, getUserProfile } from "../controllers/userController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
 router.post("/login", authUser);
-router.route("profile").get(protect, getUserProfile);
+router.get("/", (req, res) => {});
+// api/users/profile
+router.get("/profile", protect, getUserProfile);
+//router.route("profile").get(protect, getUserProfile);
 
 export default router;
