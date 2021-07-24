@@ -45,3 +45,14 @@ h1{
   background: #e52527;
   color: rgb(255, 255, 255);
 }
+
+.btn-signIn{
+  background: #1EA5FC;
+  color: rgb(250,250,250); 
+  border-radius: .2rem;
+  transition: all ease-in-out 250ms;
+}
+.btn-signIn:hover{
+  background: #038be6;
+  color: rgb(250,250,250); 
+}
