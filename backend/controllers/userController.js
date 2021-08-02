@@ -63,6 +63,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
 const getUserProfile = (req, res) => {
   const user = User.findById(req.user._id);
+  console.log("what is happenin?");
 
   if (user) {
     res.json({
@@ -80,7 +81,7 @@ const getUserProfile = (req, res) => {
 // @desc    update user
 // @route   PUT /api/users/profile
 // @access  Private
-const updateUserProfile = (req, res) => {
+const updateUserProfile = async (req, res) => {
   const user = User.findById(req.user._id);
 
   if (user) {
