@@ -19,9 +19,8 @@ const LoginScreen = ({ location, history }) => {
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
-    // what is happening down here?????
     if (!userInfo) {
-      history.push(redirect);
+      history.push(redirect); //Something fishy here
     }
   }, [history, userInfo, redirect]);
 
@@ -56,7 +55,7 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" className="btn-success my-3">
           Sign In
         </Button>
       </Form>
