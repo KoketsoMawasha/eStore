@@ -71,7 +71,7 @@ const ShippingScreen = ({ history }) => {
         </Form.Group>
 
         <Button type=" submit" variant="primary" className="btn-success my-3">
-          Continue to Payment
+          Continue
         </Button>
       </Form>
     </FormContainer>
